@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/order_view.css' %}">
+
+<div class="container mt-5">
+    <div class="row mt-5">
+        <div class="col-md-12 mt-5 text-center">
+    <table>
+    <tr style="color:white;border-bottom:1px solid gray;">
+        <th>| Product image | </th>
+        <th>Product name | </th>
+        <th>Unit Price | </th>
+        <th>Quantity | </th>
+        <th>Order ID</th>
+        <th>| &nbsp;&nbsp;Purchase Date</th>
+        <th>| Payment status | </th>
+        <th>Delivery status | </th>
+    </tr>
+        {% for i in orders%}
+    <tr style="color:white;border-bottom:1px solid gray;">
+
+            <td>
+                <span>{{ forloop.counter }}</span>
+                <img src="{{ i.product.image.url }}" width="80px;" style="padding:10px;">
+            </td>
+            <td>{{i.product.name}}</td>
+            <td>${{i.product.price}}</td>
+            <td>{{i.no_of_items}}</td>
+            <td>{{i.order_id}}</td>
+            <td>{{i.order_date}}</td>
+            <td style="color:green;">{{i.payment_status}}</td>
+            <td style="color:goldenrod">{{i.delivery_status}}</td>
+
+    </tr>
+        {%endfor%}
+    </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

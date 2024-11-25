@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/add_category.css' %}">
+
+<div class="master-container">
+<div class="form-container">
+      <form class="form" method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+        <div class="fs-3 text-center">Add Stock</div>
+        <div class="form-group">
+          <label for="stock">Stock</label>
+          <input type="number" id="stock" value="{{pro.stock}}" name="stock" required="">
+        <button class="form-submit-btn" type="submit">Submit</button>
+		</div>
+	  </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+.order-heading{
+    display:flex;
+}
+.order-heading p{
+    padding-right:100px;
+}
+.order-det{
+   display:flex;
+}
+.order-det p{
+    padding-right:100px;
+}

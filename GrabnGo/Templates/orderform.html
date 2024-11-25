@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/orderform.css' %}">
+
+<section class="container">
+  <header>Order Form</header>
+
+  <form class="form" method="POST" action="#">
+      {%csrf_token%}
+      <div class="input-box">
+          <label>Address</label>
+          <input required="" name="adrs" placeholder="Enter your address" type="text">
+      </div>
+      <div class="input-box">
+        <label>Phone Number</label>
+        <input required="" name="phno" placeholder="Enter phone number" type="number">
+      </div>
+      <div class="input-box">
+        <label>PIN</label>
+        <input required="" name="pin" placeholder="Enter PIN number" type="number">
+      </div>
+
+      <button>Submit</button>
+  </form>
+</section>
+{% endblock %}
+
+
+
+
+
+
+
+

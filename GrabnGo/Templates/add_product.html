@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/add_product.css' %}">
+
+<div class="master-container">
+<div class="form-container">
+      <form class="form" method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+        <div class="fs-3 text-center">Add New Product</div>
+        <div class="form-group">
+          <label for="Name">Product Name</label>
+          <input type="text" id="Name" name="pname" required="">
+        <div class="form-group">
+          <label for="image">Product image</label>
+          <input type="file" id="image" name="pimg" required="">
+        </div>
+        <div class="form-group">
+          <label for="Price">$ Price</label>
+          <input type="number" id="Price" name="price" required="">
+        </div>
+        <div class="form-group">
+          <label for="Stock">Stock</label>
+          <input type="number" id="Stock" name="stock" required="">
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" name="category" required="">
+            {% for i in links %}
+            <option value="{{i.name}}">{{i.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="textarea">Provide a description for the new product</label>
+          <textarea name="pdesc" id="textarea" rows="10" cols="50" required=""></textarea>
+        </div>
+        <button class="form-submit-btn" type="submit">Submit</button>
+		</div>
+	  </form>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/User_register.css' %}">
+
+<div class="reg_wrapper">
+  <div class="reg_container">
+    <form class="form" method="POST" action="{% url 'shop:user_register' %}">
+
+      {% csrf_token %}
+
+      <div class="title">Start your journey<br><span>sign up to continue</span></div>
+
+      <a href="{% url 'shop:user_login' %}">
+        <div class="go_bak"><</div>
+      </a>
+
+      <div style="display:flex;">
+          <div>
+              <input type="text" placeholder="Firstname" name="firstname" class="input">
+              <input type="text" placeholder="Lastname" name="lastname" class="input">
+              <input type="password" placeholder="Password" name="password" class="input">
+          </div>
+          <div>
+              <input type="email" placeholder="Email" name="email" class="input">
+              <input type="text" placeholder="Username" name="username" class="input">
+              <input type="password" placeholder="Confirm Password" name="confpassword" class="input">
+          </div>
+      </div>
+
+      <div class="login-with">
+        <div class="button-log">
+          <i class="fa-brands fa-google"></i>
+        </div>
+        <div class="button-log">
+          <i class="fa-brands fa-facebook-f"></i>
+        </div>
+        <div class="button-log">
+          <i class="fa-brands fa-apple"></i>
+        </div>
+      </div>
+
+      <button type="submit"  class="button-confirm">Let`s go →</button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

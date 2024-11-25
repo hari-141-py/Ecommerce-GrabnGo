@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/add_category.css' %}">
+
+<div class="master-container">
+<div class="form-container">
+      <form class="form" method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+        <div class="fs-3 text-center">Add New Category</div>
+        <div class="form-group">
+          <label for="catn">Category Name</label>
+          <input type="text" id="catn" name="cname" required="">
+          <div class="form-group">
+          <label for="image">Category image</label>
+          <input type="file" id="image" name="cimg" required="">
+        </div>
+        <div class="form-group">
+          <label for="textarea">Provide a description for the new category</label>
+          <textarea name="cdesc" id="textarea" rows="10" cols="50" required=""></textarea>
+        </div>
+        <button class="form-submit-btn" type="submit">Submit</button>
+		</div>
+	  </form>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if status == True %}
+<div class="text-center mt-5">
+    <div>
+        <img src="{% static 'images/success-payment-img.png' %}" class="img-fluid">
+    </div>
+    <div>
+        <h1>PAYMENT SUCCESSFUL</h1><h2><i class="fa-solid fa-circle-check"></i></h2>
+    </div>
+</div>
+{% else %}
+<div class="text-center mt-5">
+    <div>
+        <img src="{% static 'images/Screenshot_2024-11-19_165509-modified-removebg-preview.png' %}" class="img-fluid">
+    </div>
+    <div>
+        <h1>PAYMENT FAILED</h1><h2><i class="fa-solid fa-circle-xmark"></i></h2>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/User_login.css' %}">
+
+<div class="log_wrapper">
+    <div class="log_container">
+         <form class="form" method="POST">
+
+             {% csrf_token %}
+
+              <div class="title">Welcome,<br><span>Login to continue</span></div>
+               <a href="{% url 'shop:home' %}" id="bk-img">
+                 <div class="go_bak"><</div>
+               </a>
+              <input type="text" placeholder="Username" name="u" class="input">
+              <input type="password" placeholder="Password" name="p" class="input">
+              <div class="login-with">
+                <div class="button-log">
+                  <i class="fa-brands fa-google"></i>
+                </div>
+                <div class="button-log">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="button-log">
+                  <i class="fa-brands fa-apple"></i>
+                </div>
+              </div>
+              <button class="button-confirm">Login →</button>
+              <a href="{% url 'shop:user_register' %}" id="reg-link" style="font-family:ariel;">Not a user? <u style="color:white;">Create an account</u></a>
+         </form>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}

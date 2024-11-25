@@ -1,0 +1,132 @@
+.container{
+    display:flex;
+    margin-top:65px;
+    margin-left:-12px;
+}
+#herointro{
+    margin-top:50px;
+}
+
+/* From Uiverse.io by alexmaracinaru */
+.cta {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: white;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+.carousel-item{
+    -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 100%);
+
+}
+.hrpng{
+    -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 100%);
+    margin-top:-80px;
+    margin-left:185px;
+}
+.container a{
+    text-decoration-line:none;
+}
+
+.catdes{
+    max-height:60px;
+    overflow:auto;
+    scrollbar-color:#3c3a3a transparent;
+}
+
+.block1{
+    margin:200px;
+    margin-bottom:250px;
+}
+
+.block1 video{
+    border-radius:25px;
+    width: 100%;
+    height: auto;
+}
+.accordion-item {
+    background-color: black; /* Set background color to black */
+    border: none; /* Remove borders if needed */
+    border-bottom:1px solid gray;
+}
+.accordion-button {
+    background-color: black; /* Set button background color to black */
+    color: white; /* Set text color to white */
+    border: none; /* Remove button border */
+    border-bottom:1px solid gray;
+}
+
+.accordion-button:not(.collapsed) {
+    color: white; /* Color when button is active */
+    background-color: black; /* Slightly different color when expanded */
+    border-bottom:1px solid gray;
+}
+
+.accordion-body {
+    background-color: black; /* Set body background color to black */
+    color: white; /* Set text color to white */
+    border-bottom:1px solid gray;
+}
+.card{
+     border:1px solid white;
+    transition:all 0.35s ease-in;
+}
+.card:hover{
+    border:1px solid transparent;
+}
+.card img{
+    filter: grayscale(100%);
+    object-fit:cover;
+    transition:all 0.35s ease-in;
+}
+.card:hover img{
+    filter: grayscale(0%);
+    transform: scale(2.5);
+}
